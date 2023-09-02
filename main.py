@@ -13,11 +13,13 @@ def main():
     print("| SVG Library   |")
     print("-----------------")
 
-    draw_all_shapes()
+    #draw_all_shapes()
 
     #i_want_to_believe()
 
     #mondrian()
+    
+    #car()
 
 
 def draw_all_shapes():
@@ -45,7 +47,7 @@ def draw_all_shapes():
     except IOError as ioe:
         print(ioe)
 
-    print(s)
+    #print(s)
 
 
 def i_want_to_believe():
@@ -131,5 +133,32 @@ def mondrian():
     except IOError as ioe:
         print(ioe)
 
+def car():
+    
+    s = svg.SVG()
+
+    s.create(512, 512)
+
+    s.fill("white")
+    
+    s.circle("black", 4, "black", 50, 100, 462)
+    
+    s.circle("black", 4, "black", 50, 402, 462)
+    
+    s.rectangle(482, 100, 10, 362, "red", "black", 4, 0, 0)
+    
+    s.rectangle(250, 80, 140, 282, "red", "black", 4, 0, 0)
+    
+    s.rectangle(80, 50, 160, 295, "silver", "black", 4, 0, 0)
+    
+    s.rectangle(80, 50, 260, 295, "silver", "black", 4, 0, 0)
+         
+    s.finalize()
+    
+    try:
+        s.save("car.svg")
+    except IOError as ioe:
+        print(ioe)
+    
 
 main()
